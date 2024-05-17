@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Personal-detail</title>
+    <meta property="og:title" content="Personal-detail - Impossible Calculating Seahorse" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="~/css/personalDetail.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="~/image/icon.png" alt="image" class="personal-detail-image" />
+            <h1 class="personal-detail-text20">Skill Sheet&nbsp;</h1>
+            <div class="dropdown">
+                <button class="dropbtn">Adminname</button>
+                <div class="dropdown-content">
+                    <a href="#">Change Password</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </header>
+        <div class="personal-detail-container">
+            <form class="personal-detail-form">
+                <label class="personal-detail-text06">Name:</label>
+                <input type="text" placeholder="Name" class="personal-detail-textinput input" maxlength="60" required />
+                <label class="personal-detail-text07">Date Of Birth:</label>
+                <label class="personal-detail-text07">Date Of Birth:</label>
+                <label class="personal-detail-text07">Date Of Birth:</label>
+                <div class="date-input-container">
+                    <input type="text" id="dateOfBirthText" class="personal-detail-textinput1 input" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" title="Enter a valid date in the format YYYY-MM-DD" required />
+                    <span id="calendarIcon" class="fa fa-calendar"></span>
+                     
+                    <script>
+                        $(document).ready(function () {
+                            $("#dateOfBirthText").datepicker();
+
+                            $("#calendarIcon").click(function () {
+                                $("#dateOfBirthText").datepicker("show");
+                            });
+                        });
+                    </script>
+                </div>
+                <label class="personal-detail-text08">Gender:</label>
+                <select class="personal-detail-select">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <div class="date-input-container">
+                    <label class="personal-detail-text09">Joining Date:</label>
+                    <input type="text" id="joiningDateText" class="personal-detail-textinput2 input" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" title="Enter a valid date in the format YYYY-MM-DD" required />
+                    <span id="calendarIcon" class="fa fa-calendar"></span>                
+                    <script>
+                        $(document).ready(function () {
+                            $("#joiningDateText").datepicker();
+
+                            $("#calendarIcon").click(function () {
+                                $("#joiningDateText").datepicker("show");
+                            });
+                        });
+                    </script>
+                </div>
+                <label class="personal-detail-text10">Worked In Japan:</label>
+                <select class="personal-detail-select1">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <span class="personal-detail-text11">Personal Details</span>
+                <label class="personal-detail-text12">Qualification:</label>
+                <textarea placeholder="Qualification" class="personal-detail-textarea textarea" required ></textarea>
+                <span class="personal-detail-text13">Computer Skills</span>
+                <label class="personal-detail-text14">Languages:</label>
+                <input type="text" placeholder="Language" class="personal-detail-textinput3 input" required />
+                <label class="personal-detail-text15">Database:</label>
+                <input type="text" placeholder="Database" class="personal-detail-textinput4 input" required />
+                <label class="personal-detail-text16">Photo:</label>
+                <button type="button" id="browseButton" class="personal-detail-button button">
+                    <span>
+                        <span>Browse</span>
+                        <br />
+                    </span>
+                </button>
+                <input type="text" id="photoLocation" placeholder="Photo location" class="personal-detail-textinput5 input" required readonly />
+                <div id="previewContainer" class="preview-container"></div>
+                <button type="submit" class="personal-detail-button1 button">Update</button>
+            </form>
+        </div>
+    </div>
+    <script src="~/js/personalDetails.js"></script>
+</body>
+</html>

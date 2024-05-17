@@ -1,0 +1,90 @@
+﻿.login-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-text {
+    display: flex;
+    align-items: center;
+}
+
+    .login-text span {
+        margin-left: 1px; /* Add some spacing between the image and text */
+    }
+
+.login-form {
+    width: 400px;
+    padding: 100px;
+    box-shadow: 5px 5px 10px 0px #d4d4d4;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Add margin between input groups */
+}
+
+    .input-group img {
+        width: 50px; /* Adjust image size as needed */
+        height: auto;
+    }
+
+input#username {
+    width: 300px;
+    height: 36px;
+}
+
+input#password {
+    width: 300px;
+    height: 36px;
+}
+
+.login-checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+button.login-button.button {
+    height: 40px;
+    width: 70px;
+}
+
+button.login-button1.button {
+    width: 70px;
+    height: 40px;
+    left: 220px;
+    position: relative;
+}
+
+.toggle-password-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+}
+
+span.password-toggle-icon {
+    position: relative;
+    top: 10px;
+}
+
+.password-toggle-icon {
+    right: 30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+    .password-toggle-icon i {
+        color: #666; /* Adjust icon color as needed */
+        font-size: 18px; /* Adjust icon size as needed */
+    }
+
+        .password-toggle-icon i:hover {
+            color: #333; /* Adjust hover color as needed */
+        }

@@ -1,0 +1,99 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Personal-detail</title>
+    <meta property="og:title" content="Personal-detail - Impossible Calculating Seahorse" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/css/personalDetail.css" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <div class="container">
+        @* Header section *@
+        <header>
+            <img src="~/image/icon.png" alt="image" class="personal-detail-image" />
+            <h1 class="personal-detail-text20">Skill Sheet&nbsp;</h1>
+            @* Dropdown Menu *@
+            <div class="dropdown">
+                <button class="dropbtn" id="dropdownButton" >Adminname</button>
+                <div class="dropdown-content">
+                    <a href="/Home/ChangePassword">Change Password</a>
+                    <a href="/Home/Logout">Logout</a>
+                </div>
+            </div>
+        </header>
+        @* Alert message *@
+        <div class="alert alert-danger d-none" id="errorMessageContainer"></div>
+        <div class="alert alert-success d-none" id="successMessageContainer"></div>
+        @* Personal Details section *@
+        <div class="personal-detail-container">
+            <form class="personal-detail-form">
+                @* Personal Details Section *@
+                <span class="personal-detail-text11">Personal Details</span>
+                @* Input fields For Name *@
+                <label class="personal-detail-text06">Name:</label>
+                <input type="text" placeholder="Name" class="personal-detail-textinput input" pattern="[a-zA-Z]*" maxlength="50" required title="Only alphabets are allowed" />
+                @* Input fields and Datepicker For DOB *@
+                <label class="personal-detail-text07">Date Of Birth:</label>
+                <div class="date-input-container1">
+                    <input type="text" id="dateOfBirthText" class="personal-detail-textinput1 input" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" title="Enter a valid date in the format YYYY-MM-DD" required />
+                    <span id="calendarIcon1" class="fa fa-calendar"></span>                     
+                </div>
+                @* Dropdown menu for Gender *@
+                <label class="personal-detail-text08">Gender:</label>
+                <select class="personal-detail-select" required title="Please select your gender">
+                    <option value=""></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                @* Input fields and Datepicker For Joining Date *@
+                <label class="personal-detail-text09">Joining Date:</label>
+                <div class="date-input-container2">
+                    <input type="text" id="joiningDateText" class="personal-detail-textinput2 input" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" title="Enter a valid date in the format YYYY-MM-DD" required />
+                    <span id="calendarIcon2" class="fa fa-calendar"></span>                
+                </div>
+                @* Dropdown menu for Worked In Japan *@
+                <label class="personal-detail-text10">Worked In Japan:</label>
+                <select class="personal-detail-select1">
+                    <option value="Yes">Yes</option>
+                    <option value="No" selected>No</option>
+                </select>
+                @* Input for Qualification *@
+                <label class="personal-detail-text12">Qualification:</label>
+                <textarea placeholder="Qualification" class="personal-detail-textarea textarea" maxlength="350"></textarea>
+                @* Input for Computer Skills *@
+                <span class="personal-detail-text13">Computer Skills</span>
+                @* Input field for Languages *@
+                <label class="personal-detail-text14">Languages:</label>
+                <input type="text" placeholder="Language" class="personal-detail-textinput3 input" maxlength="350"/>
+                @* Input field for Database *@
+                <label class="personal-detail-text15">Database:</label>
+                <input type="text" placeholder="Database" class="personal-detail-textinput4 input" maxlength="350"/>
+                @* Photo upload *@
+                <label class="personal-detail-text16">Photo:</label>
+                <button type="button" id="browseButton" class="personal-detail-button btn-primary">
+                    <span>
+                        <span>Browse</span>
+                        <br />
+                    </span>
+                </button>
+                <input type="text" id="photoLocation" placeholder="Photo location" class="personal-detail-textinput5 input" readonly />
+                <div id="previewContainer" class="preview-container"></div>
+                @* Submit button *@
+                <button type="submit" class="personal-detail-button1 btn-success">Update</button>
+            </form>
+        </div>
+    </div>
+    <script src="~/js/personalDetails.js"></script>
+    <script src="~/js/browsernavigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sheet Manager</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/manageUser.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    @* Header section *@
+    <header>
+        <img src="~/image/icon.png" alt="Logo" class="logo">
+        <h1>Skill Sheet Manager</h1>
+        <div class="dropdown">
+                <button class="dropbtn" id="dropdownButton">Admin</button>
+            <div class="dropdown-content">
+                <a href="/Home/ChangePassword">Change Password</a>
+                <a href="/Home/Logout">Logout</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        @* Alert section *@
+        <div class="alert alert-success d-none" id="successMessage"></div>
+        <div class="alert alert-danger d-none" id="errorMessage"></div>
+        <h2>Manage User</h2>
+        @* Div section for toolbar *@
+        <div class="toolbar">
+            @* Show entries section *@
+            <div class="show-entries">
+                    Show <select class="form-select form-select-sm" aria-label=".form-select-sm" id="entriesSelect">
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select> entries
+            </div>
+            @* Buttons for different action *@
+            <div class="actions">
+                <button class="add btn-primary" id="addButton">Add</button>
+                <button class ="edit btn-primary" id="editButton" disabled>Edit</button>
+                    <button class="delete btn-danger" id="deleteButton" disabled>
+                        <span class="icon"><i class="fas fa-check"></i></span>
+                        Delete
+                    </button>
+                <button class="import btn-dark" id="importButton">Import</button>
+                <input type="file" id="fileInput" style="display: none;" accept=".csv" />
+                <button class="export btn-dark" id="exportButton">Export</button>
+            </div>
+        </div>
+        @* Data grid View for user data *@
+        <div id="dataGridView"></div>
+        @* Pagination section *@
+        <div class="pagination">
+            <span>Showing <span id="startIndex">1</span> to <span id="endIndex">10</span> of <span id="totalEntries"></span> entries</span>
+            <button class="pagination-button btn-secondary" id="prevButton" >Previous</button>
+            <span id="pageNumber">1</span>
+            <button class="pagination-button btn-secondary" id="nextButton" >Next</button>
+        </div>
+           @* Overlay while export and import *@
+           <div id="overlay" style="display: none;"></div>
+           @* Loading GIF while export and import *@
+           <div id="loading">
+               <img src="~/image/circle.gif" alt="Loading..." />
+           </div>
+           @* Acknowledgement message *@
+           <div id="ackMessage"></div>
+    </main>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="~/js/manageUser.js"></script>
+<script src="~/js/browsernavigation.js"></script>
+</body>
+</html>
+
+@* Add user form *@
+<div class="add-form-container hidden" id="addFromContainer">
+    <link rel="stylesheet" href="~/css/manageUser.css">
+    <div class="add-form">
+        <h2>Add New User</h2>
+        <form>
+            @* Alert section *@
+            <div class="alert alert-danger d-none" id="addErrorMessageContainer"></div>
+            <label for="role">Role:</label>
+            @* Select Role option *@
+            <select id="role">
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            @* username Input *@
+            <label for="username">User Name:</label>
+            <input type="text" id="username" minLength="6" maxlength="50" required>
+            @* Password Input *@
+            <label for="password">Password:</label>
+            <div class="password-input-container">
+                <input type="password" id="password" minLength="8" maxlength="64" required>
+                <span class="password-toggle-icon">
+                    <i class="far fa-eye" id="add-togglePassword"></i>
+                </span>
+            </div>
+            @* Confirm Password Input*@
+            <label for="confirm-password">Confirm Password:</label>
+            <div class="confirm-password-input-container">
+                <input type="password" id="confirm-password" minlength="8" maxlength="64" required>
+                <span class="confirm-password-toggle-icon">
+                    <i class="far fa-eye" id="add-toggleConfirmPassword"></i>
+                </span>
+            </div>
+            @* Email Input *@
+            <label for="email">Email:</label>
+            <input type="email" id="email" maxlength="254" required>
+            @* Form Actions Buttons *@
+            <div class="form-actions">
+                <button type="submit" class="add-button btn-primary">Add</button>
+                <button type="button" class="cancel-button btn-danger" id="hideAddFrom">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+@* Update/edit user form *@
+<div class="update-form-container hidden" id="updateFromContainer">
+    <link rel="stylesheet" href="~/css/manageUser.css">
+    <div class="update-form">
+        <h2>Edit User</h2>
+        <form>
+            @* Alert section *@
+            <div class="alert alert-danger d-none" id="updateErrorMessageContainer"></div>
+            @* Select Role option *@
+            <label for="role">Role:</label>
+            <select id="edit-role">
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            @* Username Input *@
+            <label for="username">User Name:</label>
+            <input type="text" id="edit-username" minLenght="6" maxlength="50" required>
+            @* Password Input *@
+            <label for="password">Password:</label>
+            <div class="password-input-container">
+                <input type="password" id="edit-password" minLength="8" maxlength="64" required>
+                <span class="password-toggle-icon">
+                    <i class="far fa-eye" id="edit-togglePassword"></i>
+                </span>
+            </div>
+            @* Confirm Password Input *@
+            <label for="confirm-password">Confirm Password:</label>
+            <div class="confirm-password-input-container">
+                <input type="password" id="edit-confirm-password" minLength="8" maxlength="64" required>
+                <span class="confirm-password-toggle-icon">
+                    <i class="far fa-eye" id="edit-toggleConfirmPassword"></i>
+                </span>
+            </div>
+            @* Email Input *@
+            <label for="email">Email:</label>
+            <input type="email" id="edit-email" maxlength="254" required>
+            @* Form Actions Buttons *@
+            <div class="form-actions">
+                <button type="submit" class="update-button btn-primary">Update</button>
+                <button type="button" class="cancel-button btn-danger" id="hideUpdateFrom">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,129 @@
+﻿body {
+    background-image: url('../image/simple shiny (1).svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-text {
+    display: flex;
+    align-items: center;
+    margin-top:40px;
+}
+
+    .login-text span {
+        margin-left: 1px;
+        color: white;
+    }
+
+.login-form {
+    width: 800px;
+    padding: 100px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .input-group img {
+        width: 50px;
+        height: auto;
+        border-radius:5px;
+    }
+
+input#username {
+    width: 80%;
+    height: 40px;
+    border-radius:5px;
+}
+
+input#password {
+    width: 80%;
+    height: 42px;
+    border-radius:5px;
+}
+
+.login-checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+button.login-button.btn-primary {
+    width: 30%;
+    height: 40px;
+    left: 344px;
+    position: relative;
+    display: flex;
+    border-radius: 5px;
+    background-color: #992a78;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+    button.login-button.btn-primary:hover {
+        background-color: #a10978;
+    }
+
+button.login-button1.btn-danger {
+    height: 40px;
+    width: 30%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 37px;
+}
+
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+.toggle-password-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+}
+
+span.password-toggle-icon {
+    position: relative;
+    top: 10px;
+}
+
+.password-toggle-icon {
+    right: 30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+    .password-toggle-icon i {
+        color: #666; 
+        font-size: 18px;
+    }
+
+        .password-toggle-icon i:hover {
+            color: #333; 
+        }
+
+.alert{
+    margin-top: 1rem;
+}

@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <header>
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="~/css/Login.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    </header>
+<div class="login-container">
+    <h1 class="login-text">
+        <img src="~/image/icon.png" alt="image" class="login-image" />
+        <span>Skill Sheet</span>
+    </h1>
+    <form id="loginForm" class="login-form" method="post" action="/api/Login">
+       @*  div for username input field and its image *@
+        <div class="input-group">
+            <img src="~/image/username.png" alt="image" class="login-image1" />
+            <input type="text" id="username" placeholder="User name" class="login-textinput input" name="UserName" maxlength="50" required />
+        </div>
+        @* div for password input field and its image *@
+        <div class="input-group">
+            <img src="~/image/password.png" alt="image" class="login-image2" />
+            <input type="password" id="password" placeholder="Password" class="login-textinput1 input" name="Password" required />
+            <span class="password-toggle-icon">
+                <i class="fas fa-eye" id="togglePassword"></i>
+            </span>
+        </div>
+        @* div for remember me checkbox*@
+        <div class="login-checkbox-group">
+            <input type="checkbox" class="login-checkbox" id="rememberme"/>
+            <label class="login-text09" style="margin-left: 10px" for="rememberme">Remember Me</label>
+        </div>
+        @* Submit button *@
+        <button type="submit" class="login-button btn-primary">
+            <span>
+                <span>Login</span>
+                <br />
+            </span>
+        </button>
+        @* Reset button *@
+        <button type="reset" class="login-button1 btn-danger">
+            <span>
+                <span>Reset</span>
+                <br />
+            </span>
+        </button>
+        @* Error message *@
+        <div class="alert alert-danger d-none" id="messageContainer" ></div>
+    </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="~/js/login.js"></script>
+    <script src="~/js/browsernavigation.js"></script>
+</body>
+</html>

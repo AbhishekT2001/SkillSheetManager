@@ -1,0 +1,401 @@
+.container {
+    
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border: 1px solid #ccc;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+body {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.15;
+    color: var(--dl-color-gray-black);
+    background-color: var(--dl-color-gray-white);
+    background-image: url('../image/simple shiny (1).svg');
+    background-size: cover;
+    background-position: center;
+   
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+
+.personal-detail-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+}
+
+img.personal-detail-image {
+    position: absolute;
+    margin-left: 456px;
+}
+
+.dropdown {
+    display: inline-block;
+    right: 10px;
+}
+
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    border: 1px solid;
+    border-radius: 3px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.personal-detail-form {
+    top: 0px;
+    left: 57px;
+    width: 1200px;
+    height: 771px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+label.personal-detail-text06 {
+    position: absolute;
+    left: 41px;
+    top: 89px;
+}
+
+input.personal-detail-textinput.input {
+    width: 200px;
+    left: 131px;
+    position: absolute;
+    top: 92px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+label.personal-detail-text07 {
+    position: absolute;
+    top: 92px;
+    right: 378px;
+    border-radius: 5px
+}
+
+.date-input-container1 {
+    position: absolute;
+    top: 91px;
+    right: 150px;
+}
+
+input#dateOfBirthText {
+    height: 21px;
+    border-radius: 5px;
+}
+
+.personal-detail-text08 {
+    top: 151px;
+    left: 42px;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.personal-detail-select {
+    top: 151px;
+    left: 136px;
+    position: absolute;
+}
+
+.personal-detail-text09 {
+    top: 139px;
+    right: 384px;
+    position: absolute;
+}
+
+.date-input-container2 {
+    top: 140px;
+    position: absolute;
+    right: 150px;
+}
+
+input#joiningDateText {
+    height: 21px;
+    border-radius: 5px;
+}
+
+.personal-detail-text10 {
+    top: 196px;
+    right: 361px;
+    position: absolute;
+}
+
+.personal-detail-select1 {
+    top: 198px;
+    right: 276px;
+    position: absolute;
+}
+
+.personal-detail-text11 {
+    top: 18px;
+    left: 43px;
+    position: absolute;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    border-bottom: 2px solid;
+}
+
+.personal-detail-text12 {
+    top: 272px;
+    left: 41px;
+    position: absolute;
+}
+
+.personal-detail-textarea {
+    top: 269px;
+    left: 154px;
+    width: 860px;
+    height: 93px;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.personal-detail-text13 {
+    top: 417px;
+    left: 56px;
+    position: absolute;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    border-bottom: 2px solid;
+}
+
+.personal-detail-text14 {
+    top: 427px;
+    left: 372px;
+    position: absolute;
+}
+
+.personal-detail-textinput3 {
+    top: 422px;
+    left: 493px;
+    width: 476px;
+    position: absolute;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.personal-detail-text15 {
+    top: 489px;
+    left: 374px;
+    position: absolute;
+}
+
+.personal-detail-textinput4 {
+    top: 483px;
+    left: 492px;
+    width: 476px;
+    position: absolute;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.personal-detail-text16 {
+    top: 549px;
+    left: 50px;
+    position: absolute;
+}
+
+.personal-detail-button {
+    left: 370px;
+    bottom: 160px;
+    position: absolute;
+}
+
+.personal-detail-textinput5 {
+    left: 464px;
+    width: 356px;
+    bottom: 159px;
+    position: absolute;
+    height: 30px;
+}
+
+.personal-detail-button1 {
+    left: 491px;
+    bottom: 55px;
+    position: absolute;
+    height: 30px;
+    width: 150px;
+}
+
+h1.personal-detail-text20 {
+    position: relative;
+    left: 530px;
+}
+
+
+.preview-container {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    position: absolute;
+    left: 130px;
+    bottom: 60px;
+}
+
+button#browseButton {
+    border-radius: 5px;
+    height: 30px;
+    width: 90px;
+}
+
+button.personal-detail-button1.btn-success {
+    height: 50px;
+    border-radius: 5px;
+    width: 200px;
+    background-color: #992a78;
+}
+    button.personal-detail-button1.btn-success:hover {
+        background-color: #a10978;
+    }
+
+    /* Add media queries for different screen sizes */
+    @media (max-width: 1024px) {
+        .personal-detail-form {
+        width: calc(100% - 40px);
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .personal-detail-textinput,
+    .personal-detail-select,
+    .personal-detail-textarea,
+    .personal-detail-textinput3,
+    .personal-detail-textinput4,
+    .personal-detail-textinput5,
+    .personal-detail-button,
+    .personal-detail-button1 {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .preview-container {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .personal-detail-form {
+        width: calc(100% - 40px);
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .personal-detail-textinput,
+    .personal-detail-select,
+    .personal-detail-textarea,
+    .personal-detail-textinput3,
+    .personal-detail-textinput4,
+    .personal-detail-textinput5,
+    .personal-detail-button,
+    .personal-detail-button1 {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .preview-container {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .personal-detail-form {
+        width: calc(100% - 40px);
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .personal-detail-textinput,
+    .personal-detail-select,
+    .personal-detail-textarea,
+    .personal-detail-textinput3,
+    .personal-detail-textinput4,
+    .personal-detail-textinput5,
+    .personal-detail-button,
+    .personal-detail-button1 {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .preview-container {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 0 auto;
+    }
+}
